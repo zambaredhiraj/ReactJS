@@ -31,7 +31,7 @@ export class Service {
         }
     }
 
-    async updatePost(slug, {title, content, featuredImage, status}) {
+    async updatePost(slug, {title, content, featuredImage, status, userId}) {
         try {
             return await this.database.updateDocument(
                 config.appwriteDatabaseId,
@@ -90,7 +90,7 @@ export class Service {
             return false;
         }
     }
-
+    // file upload service
     async uploadFile(file) {
         try {
             return await this.storage.createFile(
